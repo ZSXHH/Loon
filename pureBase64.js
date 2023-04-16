@@ -149,7 +149,7 @@ var Base64 = {
     } // End Function _utf8_decode 
 
 }
-
+//以下应用于Loon中
 var aa = Base64.decode($response.body); 
 var bb =aa.replace(/trojan=(.*?),password=(.*?),over-tls=.*?,tls-host=(.*?),tls-verification=.*?,fast-open=.*?,udp-relay=.*?,tag=(.*)/g,'trojan:\/\/$2@$1\?allowInsecure=0&peer=$3&sni=$3#$4');
 //var bb =bb.replace(/trojan=(.*?),password=(.*?),over-tls=.*?,tls-verification=.*?,fast-open=.*?,udp-relay=.*?,tag=(.*)/g,'trojan:\/\/$2@$1\?allowInsecure=0#$3');
