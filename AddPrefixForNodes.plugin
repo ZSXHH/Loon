@@ -1,0 +1,6 @@
+#!name= 添加机场名前缀
+#!input = SubKey
+#!input = SubName
+
+[Script]
+http-response ^https?:\/\/.+?\/api\/v1.+?token=.+?\&.* script-path=Rename_Loon.js, requires-body=true, timeout=10, tag=test, argument="requires-body=true"
