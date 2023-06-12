@@ -7,4 +7,4 @@
 #!input = Sub-5
 
 [Script]
-http-response ^https?:\/\/.+?\/api\/v1.+?token=.+ script-path=Rename_Loon.js, requires-body=true, timeout=10, tag=test, argument="requires-body=true"
+http-response ^https?:\/\/.+?\/api\/v1.+?token=.+ script-path=Rename_Loon.js, requires-body=true, timeout=10, tag=添加机场名前缀, argument="requires-body=true"
