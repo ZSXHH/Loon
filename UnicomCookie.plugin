@@ -1,0 +1,5 @@
+#!name=联通Cookie
+#!desc=获取联通查询Cookie
+
+[Script]
+http-request ^https:\/\/m\.client\.10010\.com\/servicequerybusiness\/operationservice\/queryOcsPackageFlowLeftContentRevisedInJune script-path=Ucookie.js, timeout=10, tag=联通Cookie
