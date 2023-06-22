@@ -2,4 +2,4 @@
 #!desc=简洁
 
 [Script]
-http-response ^.+\.plugin$ script-path=RemoveDescribe.js, requires-body=true, timeout=10, enabled=false, tag=RemoveDescribe, argument="requires-body=true"
+http-response ^.+\.plugin$ script-path=RemoveDescribe.js, requires-body=true, timeout=10, enabled=true, tag=RemoveDescribe, argument="requires-body=true"
