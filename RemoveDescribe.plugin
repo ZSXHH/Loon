@@ -1,8 +1,9 @@
-#!name=移除插件描述
-#!desc=简洁
+#!name = 移除插件说明
+#!desc = 三个选项：头像及主页、图标、描述
 #!select = AuthorHomepage,0,1
 #!select = Icon,0,1
 #!select = Desc,0,1
+#!input = 1删0不删
 
 [Script]
-http-response ^.+\.plugin$ script-path=RemoveDescribe.js, requires-body=true, timeout=10, enabled=true, tag=RemoveDescribe, argument="requires-body=true"
+http-response ^.+\.plugin$ script-path=https://raw.githubusercontent.com/ZSXHH/Loon/main/JS/RemoveDescribe.js, requires-body=true, timeout=10, enabled=true, tag=RemoveDescribe, argument="requires-body=true"
