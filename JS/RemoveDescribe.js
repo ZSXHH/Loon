@@ -6,7 +6,7 @@ else{
 var res = $response.body;
     console.log('原内容：\n'+res);
 //去多余
-if($persistentStore.read(AuthorHomepage) == 1){
+if($persistentStore.read(AuthHP) == 1){
    res = res.replace(/\#\!(author|homepage|icon)\s?=.*/g,'#!$1 =');
 }
 
