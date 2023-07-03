@@ -1,0 +1,5 @@
+#!name=落地IP检测
+#!desc=二改版本。布局居左、增删部分项目
+
+[Script]
+generic script-path=LocationDetection.js, timeout=10, img-url=location.circle.system
