@@ -1,5 +1,5 @@
-#根据Loon官方插件内的脚本修改而来
-#原插件地址：https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Node_detection_tool.plugin
+//根据Loon官方插件内的脚本修改而来
+//原插件地址：https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Node_detection_tool.plugin
 var url = "http://ip-api.com/json/?fields=28191&lang=zh-CN";
 var inputParams = $environment.params;
 var nodeName = inputParams.node;
