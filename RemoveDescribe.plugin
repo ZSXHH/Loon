@@ -1,6 +1,6 @@
 #!name = 移除插件说明
 #!desc = 三个选项：头像及主页、图标、描述
-#!select = AuthorHomepage,0,1
+#!select = AuthHP,0,1
 #!select = Icon,0,1
 #!select = Desc,0,1
 #!input = 1删0不删
