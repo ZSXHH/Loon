@@ -155,7 +155,7 @@ for(i=1;i<6;i++){
 }
 console.log("机场名： "+MZ);
 
-console.log("响应头： "+H);
+//console.log("响应头： "+H);
 
 if (!$response.body.includes(".")){
      console.log("base转码");
