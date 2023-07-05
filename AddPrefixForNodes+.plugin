@@ -1,4 +1,4 @@
-#!name = 添加机场名前缀
+#!name = 添加机场名前缀+
 #!desc = 输入前缀，空格后粘贴机场订阅链接
 #!input = Sub-1
 #!input = Sub-2
