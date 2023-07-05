@@ -1,0 +1,10 @@
+#!name = 添加机场名前缀
+#!desc = 输入前缀，空格后粘贴机场订阅链接
+#!input = Sub-1
+#!input = Sub-2
+#!input = Sub-3
+#!input = Sub-4
+#!input = Sub-5
+
+[Script]
+http-response ^https?:\/\/.+?\?list\=(shadowrocket|quantumultx|surge)$ script-path=https://raw.githubusercontent.com/ZSXHH/Loon/main/JS/AddPrefixForNodes.js, requires-body=true, timeout=10, argument="requires-body=true"
