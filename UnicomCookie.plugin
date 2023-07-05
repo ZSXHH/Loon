@@ -1,5 +1,8 @@
-#!name=联通Cookie
-#!desc=获取联通查询Cookie
+#!name = 联通Cookie
+#!desc = 点击通知，捷径运行，存储Cookie
 
 [Script]
-http-request ^https:\/\/m\.client\.10010\.com\/servicequerybusiness\/operationservice\/queryOcsPackageFlowLeftContentRevisedInJune script-path=Ucookie.js, timeout=10, tag=联通Cookie
+http-request ^https:\/\/m\.client\.10010\.com\/servicequerybusiness\/operationservice\/queryOcsPackageFlowLeftContentRevisedInJune script-path=Ucookie.js, timeout=10, tag=写入-联通Cookie
+
+[Mitm]
+hostname = m.client.10010.com
