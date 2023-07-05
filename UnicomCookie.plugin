@@ -2,7 +2,7 @@
 #!desc = 点击通知，捷径运行，存储Cookie
 
 [Script]
-http-request ^https:\/\/m\.client\.10010\.com\/servicequerybusiness\/operationservice\/queryOcsPackageFlowLeftContentRevisedInJune script-path=Ucookie.js, timeout=10, tag=写入-联通Cookie
+http-request ^https:\/\/m\.client\.10010\.com\/servicequerybusiness\/operationservice\/queryOcsPackageFlowLeftContentRevisedInJune script-path=https://raw.githubusercontent.com/ZSXHH/Loon/main/JS/UnicomCookie.js, timeout=10, tag=写入-联通Cookie
 
 [Mitm]
 hostname = m.client.10010.com
