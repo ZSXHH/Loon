@@ -158,16 +158,16 @@ console.log("机场名： "+MZ);
 //console.log("响应头： "+H);
 
 if (!$response.body.includes(".")){
-     console.log("base转码");
+     console.log("Base64解码，再命名");
       var B = Base64.decode($response.body);
 }
 else{
-     console.log("明文节点，不转码");
+     console.log("明文节点，不转码，直接命名");
        var B = $response.body;
 }
 
 var R = B.replace(/(.+)/g,'['+MZ+'] $1');
 
-//console.log(R);
+console.log(R);
 //$done({headers:H,body:R});
 $done({body:R});
