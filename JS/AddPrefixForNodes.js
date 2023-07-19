@@ -152,6 +152,8 @@ for(i=1;i<6;i++){
       var MZ =Sub.match(/^[^\s]+/)[0];
         break;
 }
+  console.log('未适配，无法添加前缀');
+  $done({});
 }
 console.log("机场名： "+MZ);
 
