@@ -160,7 +160,6 @@ $done({});
 }
 
 console.log("机场名： "+MZ);
-
 //console.log("响应头： "+H);
 
 if (!$response.body.includes(".")){
