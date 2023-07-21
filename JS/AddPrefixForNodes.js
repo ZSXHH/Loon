@@ -149,7 +149,7 @@ var murl = $request.url;
 for(i=1;i<6;i++){
   var Sub = $persistentStore.read('Sub-'+i);
     if(Sub.includes(murl)){
-       MZ =Sub.match(/^[^\s]+/)[0];
+       var MZ =Sub.match(/^[^\s]+/)[0];
         break;
 }
 }
