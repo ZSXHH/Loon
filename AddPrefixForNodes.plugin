@@ -7,4 +7,4 @@
 #!input = Sub-5
 
 [Script]
-http-response ^https?:\/\/(v1\.dogapi\.yachts|pcixox\.linkhub\.website|fly\.fuckdurov\.com|djjc\.cfd|sub\.sharecentre\.online) script-path=https://raw.githubusercontent.com/ZSXHH/Loon/main/JS/AddPrefixForNodes.js, requires-body=true, timeout=10, argument="requires-body=true"
+http-response ^https?:\/\/(.+?\/api\/v1.+?token=.+|.+?\?list\=(shadowrocket|quantumultx|surge)$) script-path=https://raw.githubusercontent.com/ZSXHH/Loon/main/JS/AddPrefixForNodes.js, requires-body=true, timeout=10, tag=AddPrefixForNodes.js, argument="requires-body=true"
