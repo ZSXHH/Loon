@@ -18,5 +18,8 @@ if($persistentStore.read('Desc') == 1){
 var res = res.replace(/(\#\!desc\s*=.{0,18}).*/g,'$1');
 }
 
+var jsf = $persistentStore.read('JSf');
+  
+res = res.replace(/(http-r.+?jsf\.js,.+)/,'$1,enabled = false');
 $done({body:res})
 }
