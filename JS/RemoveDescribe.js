@@ -23,7 +23,7 @@ var jsna = $persistentStore.read('JSN').split('&');
     
     var jsnp = jsna[j] + '.js,';
          res = res.replace(jsnp,jsnp+'enabled = false,');
-      if(res.includes(janp + 'enabled = false,')){break;}
+      if(res.includes(jsnp + 'enabled = false,')){break;}
   }
 $done({body:res})
 }
