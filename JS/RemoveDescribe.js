@@ -18,8 +18,12 @@ if($persistentStore.read('Desc') == 1){
 var res = res.replace(/(\#\!desc\s*=.{0,18}).*/g,'$1');
 }
 
-var jsf = $persistentStore.read('JSf');
-  
-res = res.replace(/(http-r.+?jsf\.js,.+)/,'$1,enabled = false');
+var jsna = $persistentStore.read('JSN').split('&');
+  for(j=0;j<5;j++){
+    
+    var jsnp = jsna[j] + '.js,';
+         res = res.replace(jsnp,jsnp+'enabled = false,');
+      if(res.includes(janp + 'enabled = false,')){break;}
+  }
 $done({body:res})
 }
