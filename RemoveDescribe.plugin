@@ -1,5 +1,5 @@
 #!name = 移除插件
-#!desc = 头像及主页、图标、描述、关闭脚本
+#!desc = 头像及主页、图标、描述、脚本、规则
 #!select = AuthHP,0,1
 #!select = Icon,0,1
 #!select = Desc,0,1
