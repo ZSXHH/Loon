@@ -23,7 +23,7 @@ var res = res.replace(/(\#\!desc\s*=.{0,18}).*/g,'$1');
 }
 
 //新增去除插件内规则、关闭指定脚本
-var Rname = $request.url.match(/[\/]+(?=\.plugin)/)[0];
+var Rname = $request.url.match(/[^\/]+(?=\.plugin)/)[0];
      console.log('提取链接名：'+Rname);
 for(m=1;m<3;m++){
    var RName = $persistentStore.read('Name-'+m).match(/^[^\&]+/)[0];
