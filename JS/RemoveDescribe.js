@@ -40,12 +40,12 @@ $done({body:res});
   
 for(k=1;k<Rarr.length;k++){
   if(Rarr[k]=='r'){
-    var res = res.replace(/\[Rule\]\n[^\[]+/,'');
+    var res = res.replace(/\[Rule\]\s+[^\[]+/g,'');
 console.log('去规则：'+res);continue;
                   }
     var Rarrjs = Rarr[k] + '.js,';
     var res = res.replace(Rarrjs,Rarrjs+'enabled = false,');
-console.log('去脚本：'+res);
+//console.log('去脚本：'+res);
 }
 $done({body:res})
 }
