@@ -40,7 +40,7 @@ $done({body:res});
   
 for(k=1;k<Rarr.length;k++){
   if(Rarr[k]=='r'){
-    var res = res.replace(/\[Rule\]\s+[^\[]+/g,'');
+    var res = res.replace(/\[Rule\]\s*?\n[^\[]+/g,'');
 console.log('去规则：'+res);continue;
                   }
     var Rarrjs = Rarr[k] + '.js,';
