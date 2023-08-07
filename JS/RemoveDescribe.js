@@ -1,3 +1,7 @@
+//1、0决定对应项是否删除
+//Name-数字 填写格式：插件名&脚本名&脚本名&r
+//r：删除插件自带规则。不删则去除&r
+
 if($request.headers["user-agent"].includes('Mozilla')){
   console.log('safari');
 $done({});
