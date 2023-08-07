@@ -3,8 +3,9 @@
 #!select = AuthHP,0,1
 #!select = Icon,0,1
 #!select = Desc,0,1
-#!input = 1删0不删
-#!input = JSN
+#!input = Name-1
+#!input = Name-2
+#!input = Name-3
 
 [Script]
 http-response ^.+\.plugin$ script-path=https://raw.githubusercontent.com/ZSXHH/Loon/main/JS/RemoveDescribe.js, requires-body=true, timeout=10, enabled=true, tag=RemoveDescribe, argument="requires-body=true"
