@@ -27,7 +27,7 @@ var Rname = $request.url.match(/[^\/]+(?=\.plugin)/)[0];
      console.log('请求插件名：'+Rname);
 for(m=1;m<4;m++){
    var RNamm = $persistentStore.read('Name-'+m);
-       if(typeof RNamm  === 'undefined'){continue;}
+       if(typeof RNamm  === 'undefined'){console.log('预设项为空');continue;}
    var RName = RNamm.match(/^[^\&]+/)[0];
 console.log('预设插件名：'+RName);
     if(RName==Rname){
@@ -36,11 +36,11 @@ console.log('预设插件名：'+RName);
            break;}
                 }
 if(typeof Rarr  === 'undefined'){
-   console.log('无需去除规则或脚本');
+   console.log('该插件无需去除脚本、规则');
 $done({body:res});
 }
-  
-for(k=1;k<Rarr.length;k++){
+else{
+ for(k=1;k<Rarr.length;k++){
   if(Rarr[k]=='r'){
     var res = res.replace(/\[Rule\]\s*?\n[^\[]+/g,'');
 console.log('去规则：'+res);continue;
@@ -48,6 +48,7 @@ console.log('去规则：'+res);continue;
     var Rarrjs = Rarr[k] + '.js,';
     var res = res.replace(Rarrjs,Rarrjs+'enabled = false,');
 //console.log('去脚本：'+res);
-}
+                           }
 $done({body:res})
+    }
 }
