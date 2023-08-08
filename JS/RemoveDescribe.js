@@ -24,12 +24,14 @@ var res = res.replace(/(\#\!desc\s*=.{0,18}).*/g,'$1');
 
 //新增去除插件内规则、关闭指定脚本
 var Rname = $request.url.match(/[^\/]+(?=\.plugin)/)[0];
-     console.log('提取链接名：'+Rname);
-for(m=1;m<3;m++){
-   var RName = $persistentStore.read('Name-'+m).match(/^[^\&]+/)[0];
-     console.log('匹配插件名：'+RName);
- if(RName==Rname){
-   var Rarr = $persistentStore.read('Name-'+m).split('&'); 
+     console.log('请求插件名：'+Rname);
+for(m=1;m<4;m++){
+   var RNamm = $persistentStore.read('Name-'+m);
+       if(typeof RNamm  === 'undefined'){continue;}
+   var RName = RNamm.match(/^[^\&]+/)[0];
+console.log('预设插件名：'+RName);
+    if(RName==Rname){
+      var Rarr = $persistentStore.read('Name-'+m).split('&'); 
      console.log('项目数组：'+Rarr);
            break;}
                 }
