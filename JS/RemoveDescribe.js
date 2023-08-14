@@ -15,7 +15,7 @@ if($persistentStore.read('AuthHP') == 1){
 }
 
 if($persistentStore.read('Icon') == 1){
-   res = res.replace(/\#\!icon\s?=.*/g,'#!$1 =');
+   res = res.replace(/\#\!icon\s?=.*/g,'#!icon =');
 }
 
 if($persistentStore.read('Desc') == 1){
