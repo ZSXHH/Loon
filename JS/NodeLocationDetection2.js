@@ -4,8 +4,8 @@ async function main() {
   var nodeName = loonParams.node;
   var nodeAdd = loonParams.nodeInfo.address;
   var aurl = `http://223.5.5.5/resolve?name=${nodeAdd}&type=A&short=1`;
-  var ourl = "http://ip-api.com/json/?fields=28191&lang=zh-CN";
-  var inParams = 'http://ip-api.com/json/119.29.29.29?fields=28191&lang=zh-CN';
+  var ourl = "http://ip-api.com/json/?fields=28187&lang=zh-CN";
+  var inParams = 'http://ip-api.com/json/119.29.29.29?fields=28187&lang=zh-CN';
   var outParams = {url:ourl,node:nodeName}
   var omsg = "",imsg ="";
   try {//落地信息
@@ -46,7 +46,7 @@ async function main() {
        var inParams =`https://api-v3.speedtest.cn/ip?ip=${nodeAdd}`;
         break;
       case 'v6':
-       var inParams = `http://ip-api.com/json/${nodeAdd}?fields=28191&lang=zh-CN`;
+       var inParams = `http://ip-api.com/json/${nodeAdd}?fields=28187&lang=zh-CN`;
         break;
 }
 
@@ -80,8 +80,7 @@ function ijson2info(ins) {
   var ires = `<p style="text-align: left; font-family: -apple-system; font-size: large; font-weight: thin">------------------------------------
 <br><b>入 口 I P : </b>${ins.data['ip'] ? ins.data['ip'] : ins['query'] ? ins['query'] : ins.data['addr']}<br>
 <br><b>入口国家 : </b>${ins.data['country'] ? ins.data['country'] : ins['country']} ${ins.data['countryCode'] ? ins.data['countryCode'] : ins['countryCode'] ? ins['countryCode'] : ""}<br>
-<br><b>入口地区 : </b>${ins.data['province'] ? ins.data['province'] : ins['regionName']} ${ins['region'] ? ins['region'] : ""}<br>
-<br><b>入口城市 : </b>${ins.data['city'] ? ins.data['city'] : ins['city']}<br>
+<br><b>入口地区 : </b>${ins.data['province'] ? ins.data['province'] : ins['regionName']} ${ins.data['city'] ? ins.data['city'] : ins['city']}<br>
 <br><b>入口机构 : </b>${ins.data['operator'] ? ins.data['operator'] : ins['org'] ? ins['org'] : ""}<br>
 <br><b>入口 ISP : </b>${ins.data['isp'] ? ins.data['isp'] : ins['isp']}<br>
 <br><b>入口ASN : </b>${ins.data['as'] ? ins.data['as'] : ins['as'] ? ins['as'] : ""}<br>`;
@@ -96,8 +95,7 @@ function json2info(out) {
   var ores = `------------------------------------
 <br><b>落 地 I P : </b>${out['query']}<br>
 <br><b>落地国家 : </b>${out['country']} ${out['countryCode']}<br>
-<br><b>落地地区 : </b>${out['regionName']} ${out['region']}<br>
-<br><b>落地城市 : </b>${out['city']}<br>
+<br><b>落地地区 : </b>${out['regionName']} ${out['city']}<br>
 <br><b>落地机构 : </b>${out['org']}<br>
 <br><b>落地 ISP : </b>${out['isp']}<br>
 <br><b>落地ASN : </b>${out['as']}<br>
