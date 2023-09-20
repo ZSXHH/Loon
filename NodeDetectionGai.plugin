@@ -1,5 +1,5 @@
-#!name=节点检测
-#!desc=节点落地及解锁查询
+#!name=节点信息检测
+#!desc=入口、落地及解锁查询
 #!icon = 
 ##原版链接：https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Node_detection_tool.plugin
 
