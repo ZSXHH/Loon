@@ -18,25 +18,24 @@ async function main() {
       omsg = out ? json2info(out) : "";
       var lquery = out['query'];
  //$done({"title": "落地检测", "htmlMessage": msg});           
-}console.log('落地ip lquery：'+lquery+'\n');
+}
 //入口信息
     var servertyped = serverType(nodeAdd);
     console.log('原始地址：'+nodeAdd);
     if(servertyped === 'domain'){
-    console.log('是域名');
-       var insIP = await getJSON(aurl);
-       console.log('原始ip数组：'+insIP);
-       //insIP = JSON.parse(insIP);
-       //console.log('处理ip数组：'+insIP);
-       var nodeAdd = JSON.parse(insIP)[0];
+      console.log('是域名');
+      var insIP = await getJSON(aurl);
+      console.log('域名对应ip数组：'+insIP);
+      var nodeAdd = JSON.parse(insIP)[0];
    }//else{console.log('不是域名');}
-    console.log('入口ip nodeAdd：'+nodeAdd);
+    console.log('入口ip（nodeAdd）：'+nodeAdd);
+    console.log('落地ip（query）  ：'+lquery+'\n');
     if(nodeAdd == lquery){
       servertyped = 'v2';
-      console.log('相同');
+      console.log('入口落地ip相同');
    }else{
       servertyped = serverType(nodeAdd);
-      console.log('不相同');}
+      console.log('入口落地ip不相同');}
 //选择入口查询url
     switch(servertyped){
       case 'v2':
