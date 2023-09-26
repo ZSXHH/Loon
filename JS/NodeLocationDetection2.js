@@ -53,7 +53,7 @@ async function main() {
 }catch(error){
     imsg = `------------------------------------<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 入口查询超时 **</p>`;}
     
- var allmsg = imsg+omsg;
+ var allmsg = imsg+omsg+`------------------------------------<br><font color='#ff0000'><b>检测节点</b> ➟ `+ $environment.params.node+`</font></p>;
  $done({"title": "入口落地检测", "htmlMessage": allmsg});
 }
 
@@ -89,9 +89,7 @@ function json2info(out) {
 <br><b>落地地区 : </b>${out['regionName']} ${out['city']}<br>
 <br><b>落地机构 : </b>${out['org']}<br>
 <br><b>落地 ISP : </b>${out['isp']}<br>
-<br><b>落地ASN : </b>${out['as']}<br>
-------------------------------------
-<br><font color='#ff0000'><b>检测节点</b> ➟ `+ $environment.params.node+`</font></p>`;
+<br><b>落地ASN : </b>${out['as']}<br>`;
    return ores;
 }
 
