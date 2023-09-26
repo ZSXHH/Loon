@@ -15,7 +15,7 @@ async function main() {
     omsg = out ? json2info(out) : "";
     var lquery = out['query'];
  //$done({"title": "落地检测", "htmlMessage": msg});           
-
+  }try{
 //入口信息
     var servertyped = serverType(nodeAdd);
     console.log('原始地址：'+nodeAdd);
