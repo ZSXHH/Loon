@@ -14,7 +14,7 @@ async function main() {
     omsg = out ? json2info(out) : "";
     var lquery = out['query'];         
  }catch(error){
-    omsg = `<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 出口查询超时 **</p>`;}
+    omsg = `------------------------------------<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 出口查询超时 **</p>`;}
 
   try{//入口信息
     var servertyped = serverType(nodeAdd);
@@ -51,7 +51,7 @@ async function main() {
     imsg = ins ? ijson2info(ins) : "";
 
 }catch(error){
-    imsg = `<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 入口查询超时 **</p>`;}
+    imsg = `------------------------------------<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 入口查询超时 **</p>`;}
     
  var allmsg = imsg+omsg;
  $done({"title": "入口落地检测", "htmlMessage": allmsg});
