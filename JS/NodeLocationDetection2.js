@@ -14,7 +14,7 @@ async function main() {
     omsg = out ? json2info(out) : "";
     var lquery = out['query'];         
  }catch(error){
-    omsg = `------------------------------------<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 出口查询超时 **</p>`;}
+    omsg = `------------------------------------<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;">** 出口查询超时 **</p>`;}
 
   try{//入口信息
     var servertyped = serverType(nodeAdd);
@@ -51,9 +51,9 @@ async function main() {
     imsg = ins ? ijson2info(ins) : "";
 
 }catch(error){
-    imsg = `<p style="text-align: center; font-family: -apple-system;color:#ff0000;font-weight:thin;">------------------------------------</br><font size='15px'>** 入口查询超时 **</font></p>`;}
-    
- var allmsg = imsg+omsg+`<p style="text-align: center; font-family: -apple-system; font-size: large;font-weight: thin;">------------------------------------<br><font color='#ff0000'><b>检测节点</b> ➟ `+ $environment.params.node+`</font></p>`;
+    //imsg = `<p style="text-align: center; font-family: -apple-system;color:#ff0000;font-weight:thin;">------------------------------------</br><font size='15px'>** 入口查询超时 **</font></p>`;}
+      imsg = `------------------------------------<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;">** 入口查询超时 **</p>`;
+ var allmsg = imsg+omsg+`<p style="text-align: left; font-family: -apple-system; font-size: large;font-weight: thin;">------------------------------------<br><font color='#ff0000'><b>检测节点</b> ➟ `+ $environment.params.node+`</font></p>`;
  $done({"title": "入口落地检测", "htmlMessage": allmsg});
 }
 
