@@ -79,7 +79,7 @@ function ijson2info(ins) {
   var ires = `<p style="text-align: left; font-family: -apple-system; font-size: large; font-weight: thin">------------------------------------
 <br><b>入 口 I P : </b>${ins.data['ip'] ? ins.data['ip'] : ins['query'] ? ins['query'] : ins.data['addr']}<br>
 <br><b>入口国家 : </b>${ins.data['country'] ? ins.data['country'] : ins['country']} ${ins.data['countryCode'] ? ins.data['countryCode'] : ins['countryCode'] ? ins['countryCode'] : ""}<br>
-<br><b>入口地区 : </b>${ins.data['province'] ? ins.data['province'] : ins['regionName']} ${ins.data['city'] ? ins.data['city'] : ins['city']}<br>
+<br><b>入口地区 : </b>${ins.data['province'] ? ins.data['province'] : ins['regionName']} ${ins.data['city'] ? ins.data['city'] : ins['city']} ${ins.data['district'] ? ins.data['district'] : ""}<br>
 <br><b>入口机构 : </b>${ins.data['operator'] ? ins.data['operator'] : ins['org'] ? ins['org'] : ""}<br>
 <br><b>入口 ISP : </b>${ins.data['isp'] ? ins.data['isp'] : ins['isp']}<br>
 <br><b>入口ASN : </b>${ins.data['as'] ? ins.data['as'] : ins['as'] ? ins['as'] : ""}<br>`;
