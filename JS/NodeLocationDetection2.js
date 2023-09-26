@@ -9,14 +9,14 @@ async function main() {
   var outParams = {url:ourl,node:nodeName}
   var omsg = "",imsg ="";
   try {//落地信息
-    var prs = '1';
     var out = await getJSON(outParams);
     var out = JSON.parse(out);
     omsg = out ? json2info(out) : "";
-    var lquery = out['query'];
- //$done({"title": "落地检测", "htmlMessage": msg});           
-  }try{
-//入口信息
+    var lquery = out['query'];         
+ }catch(error){
+    omsg = `<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 出口查询超时 **</p>`;}
+
+  try{//入口信息
     var servertyped = serverType(nodeAdd);
     console.log('原始地址：'+nodeAdd);
     if(servertyped === 'domain'){
@@ -33,8 +33,8 @@ async function main() {
    }else{
       servertyped = serverType(nodeAdd);
       console.log('入口落地ip不相同');}
-//选择入口查询url
-    switch(servertyped){
+
+    switch(servertyped){ //选择入口查询url
       case 'v2':
        var inParams = {url:"https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr",node:nodeName};
         break;
@@ -46,18 +46,13 @@ async function main() {
         break;
 }
 
-    console.log('入口url参数：'+inParams)
-    var prs = '0'
+    console.log('入口url参数：'+inParams);
     var ins = await getJSON(inParams);
     imsg = ins ? ijson2info(ins) : "";
 
 }catch(error){
-  if (prs == '1'){
-    omsg = `<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 出口查询超时 **</p>`;}
-  else{
     imsg = `<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 入口查询超时 **</p>`;}
     
-  }
  var allmsg = imsg+omsg;
  $done({"title": "入口落地检测", "htmlMessage": allmsg});
 }
