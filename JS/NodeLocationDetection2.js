@@ -9,16 +9,13 @@ async function main() {
   var outParams = {url:ourl,node:nodeName}
   var omsg = "",imsg ="";
   try {//落地信息
+    var prs = '1';
     var out = await getJSON(outParams);
-    if (out == 'error') {
-      omsg = `<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 出口查询超时 **</p>`;
-// $done({"title": "落地检测", "htmlMessage": msg});
-  } else {
-      var out = JSON.parse(out);
-      omsg = out ? json2info(out) : "";
-      var lquery = out['query'];
+    var out = JSON.parse(out);
+    omsg = out ? json2info(out) : "";
+    var lquery = out['query'];
  //$done({"title": "落地检测", "htmlMessage": msg});           
-}
+
 //入口信息
     var servertyped = serverType(nodeAdd);
     console.log('原始地址：'+nodeAdd);
@@ -50,19 +47,19 @@ async function main() {
 }
 
     console.log('入口url参数：'+inParams)
+    var prs = '0'
     var ins = await getJSON(inParams);
-    if(ins == 'error'){
-      imsg = `<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 入口查询超时 **</p>`
-// $done({"title": "入口检测", "htmlMessage": imsg});
-   }else{
-      imsg = ins ? ijson2info(ins) : "";
-}
-    var allmsg = imsg+omsg;
-    $done({"title": "入口落地检测", "htmlMessage": allmsg});
-  }catch(error){
-     console.log(error);
- }
-   $done();
+    imsg = ins ? ijson2info(ins) : "";
+
+}catch(error){
+  if (prs == '1'){
+    omsg = `<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 出口查询超时 **</p>`;}
+  else{
+    imsg = `<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;"></br>** 入口查询超时 **</p>`;}
+    
+  }
+ var allmsg = imsg+omsg;
+ $done({"title": "入口落地检测", "htmlMessage": allmsg});
 }
 
 //节点地址类型
