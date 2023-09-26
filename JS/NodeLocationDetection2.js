@@ -52,7 +52,7 @@ async function main() {
 
 }catch(error){
     //imsg = `<p style="text-align: center; font-family: -apple-system;color:#ff0000;font-weight:thin;">------------------------------------</br><font size='15px'>** 入口查询超时 **</font></p>`;}
-      imsg = `------------------------------------<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;">** 入口查询超时 **</p>`;
+      imsg = `------------------------------------<p style="text-align: center; font-family: -apple-system; font-size: 15px;color:#ff0000;font-weight: bold;">** 入口查询超时 **</p>`;}
  var allmsg = imsg+omsg+`<p style="text-align: left; font-family: -apple-system; font-size: large;font-weight: thin;">------------------------------------<br><font color='#ff0000'><b>检测节点</b> ➟ `+ $environment.params.node+`</font></p>`;
  $done({"title": "入口落地检测", "htmlMessage": allmsg});
 }
