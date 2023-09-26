@@ -89,7 +89,7 @@ function json2info(out) {
 <br><b>落地地区 : </b>${out['regionName']} ${out['city']}<br>
 <br><b>落地机构 : </b>${out['org']}<br>
 <br><b>落地 ISP : </b>${out['isp']}<br>
-<br><b>落地ASN : </b>${out['as']}<br>`;
+<br><b>落地ASN : </b>${out['as']}`;
    return ores;
 }
 
