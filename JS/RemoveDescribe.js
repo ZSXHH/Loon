@@ -8,7 +8,7 @@ $done({});
 }
 else{
 var res = $response.body;
-    console.log('原内容：\n'+res);
+
 //去多余
 if($persistentStore.read('AuthHP') == 1){
    res = res.replace(/\#\!(author|homepage)\s?=.*/g,'#!$1 =');
@@ -37,6 +37,7 @@ console.log('预设插件名：'+RName);
                 }
 if(typeof Rarr  === 'undefined'){
    console.log('该插件无需去除脚本、规则');
+   console.log('替换后：\n'+res);
 $done({body:res});
 }
 else{
@@ -49,6 +50,7 @@ console.log('去规则：'+res);continue;
     var res = res.replace(Rarrjs,Rarrjs+'enabled = false,');
 //console.log('去脚本：'+res);
                            }
+                           
 $done({body:res})
     }
 }
